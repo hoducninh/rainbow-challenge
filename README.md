@@ -1,3 +1,4 @@
+
 # Summary of Rainbow Store Customer Prediction
 
 High-level outline for our analytic project:
@@ -16,7 +17,7 @@ Note: This report is the summary of the full project, which is available [here](
 
 ## Problem Understanding
 
-In this notebook, we are going to help Rainbow to understand and predict customer behaviours. The entire assignment can be viewed [here](https://github.com/hoducninh/rainbow-challenge/blob/master/appendix-problem-uderstanding/VinIDRecruitChallenge_MLTrack_ProblemSet.pdf) and the one sentence summary is:
+In this notebook, we are going to help Rainbow to understand and predict customer behaviors. The entire assignment can be viewed [here](https://github.com/hoducninh/rainbow-challenge/blob/master/appendix-problem-uderstanding/VinIDRecruitChallenge_MLTrack_ProblemSet.pdf) and the one sentence summary is:
 
 __Use the provided Rainbow store data to develop a model that can predict which customers make purchase in month 3, using transactional data from months 1 and 2, and then give recommendation on which customers for sending promotional e-mails to next month.__
 
@@ -24,7 +25,7 @@ In this project, we focus on the process of building a model which are: __labeli
 
 ## Methodology
 
-After undestanding business problem, heere is steps for our machine learning project: 
+After undertanding business problem, here is steps for our machine learning project: 
 
 1. Data cleaning and formatting
 2. Exploratory data analysis
@@ -119,17 +120,17 @@ In the following table, we will see the number of customer (`No of customer`) of
 
 ![](imgs/cus-cohort.png)
 
-It is interesting that the nummber of customers who join in Feb-2018 is much higher than the following months. Number of new customers decreased more than 3 times, from 9978 customers in Feb to 3306 customers in March, and this number keeps dropping in the following months. 
+It is interesting that the number of customers who join in Feb-2018 is much higher than the following months. Number of new customers decreased more than 3 times, from 9978 customers in Feb to 3306 customers in March, and this number keeps dropping in the following months. 
 
-We also see the retention rate drastically drops after one month of joining. Luckily, we maintain a stable retention rate in the following (`Months since joined`). It hightlights the point that, __customer onboarding is crucial for achieving the high retention rate__. A clearer wiew is presented in the folowing visulaization.
+We also see the retention rate drastically drops after one month of joining. Luckily, we maintain a stable retention rate in the following (`Months since joined`). It hightlights the point that, __customer onboarding is crucial for achieving the high retention rate__. A clearer wiew is presented in the following visualization.
 
  ![](imgs/cohort.png)
  
  From cohort analysis, some __business reviews__ need to be taken to clarify the following problems:
 
-1. Why do we have many new customers in Feb, which is much higher than the folowing months?
+1. Why do we have many new customers in Feb, which is much higher than the following months?
 
-2. Is any problem with customer onboarding, since the retenton rate drop drastically after first month of first purchase?
+2. Is any problem with customer onboarding, since the retention rate drop drastically after first month of first purchase?
 
 3. Why is the retention rate maintain at the same level from the first to fourth month after the first purchase for each cohorts?
 
@@ -149,7 +150,7 @@ For data labeling, our approach is to create function to label on single custome
 
  ![](imgs/single-customer-labeling.png)
 
-After testing succesfully on single customer, we apply for all customers in our dataset. Now, we are good to move to the process of feature engineering and selection.
+After testing successfully on single customer, we apply for all customers in our dataset. Now, we are good to move to the process of feature engineering and selection.
 
 #### Feature Engineering 
 
@@ -167,11 +168,11 @@ The following call removes:
 2. Any features with only a single unique value
 3. One out of every pair of columns with a correlation greater than 0.9.
 
-__From the process of feature engineering and selection, we obtain the modeling ready dataset, which contaning 39 feature vectors__. For more details about the steps, the notebook can be found [here](https://github.com/hoducninh/rainbow-challenge/blob/master/02-notebook/notebook.ipynb).
+__From the process of feature engineering and selection, we obtain the modeling ready dataset, which containing 39 feature vectors__. For more details about the steps, the notebook can be found [here](https://github.com/hoducninh/rainbow-challenge/blob/master/02-notebook/notebook.ipynb).
 
 ### Build and evaluate model
 
-From the dataset, we go directly to the modeling process using XGBoost. The process of __model optimization__ (tuning parameters, regularization) could be left for futher projects in the future. 
+From the dataset, we go directly to the modeling process using XGBoost. The process of __model optimization__ (tuning parameters, regularization) could be left for further projects in the future. 
 
  ![](imgs/xgboost.png)
  
@@ -222,12 +223,11 @@ From the model interpretation with SHAP, we currently draw some conclusions:
 
 3. Customers who make purchase at the date (`15th`) and before are less likely to churn.
 
-
 ## Answer on Discussion Problem
 
 ### Which are customers to send promotional e-mails to next month?
 
-To answer the question, we will write a fuction to give prediction on monthly basis. The function allows us to pass in month in which we want to give prediction. This also ensures that when making predictions for one month, we're only using data from before than month.
+To answer the question, we will write a function to give prediction on monthly basis. The function allows us to pass in month in which we want to give prediction. This also ensures that when making predictions for one month, we're only using data from before than month.
 
 ![](imgs/month-prediction.png)
 
@@ -235,7 +235,7 @@ When testing on a particular month, it works!!!. Remember that, the (`label`) fr
 
 ![](imgs/month-test.png)
 
- __By doing this, we could import more data from comming months and give prediction on churn customers__.
+ __By doing this, we could import more data from coming months and give prediction on churn customers__.
  
 
 Back to our question on which customer to send promotional emails, we got some points to remember so far:
@@ -258,7 +258,7 @@ So, __there is a conflict between the insights from exploratory analysis and our
 
 2. We might change the approach for modeling process after the steps of exploratory data analysis. 
 
-From this,the next steps is what we can adopt to imporove the modeling process and business actions.
+From this,the next steps is what we can adopt to improve the modeling process and business actions.
 
 ## Next Steps
 
@@ -281,5 +281,5 @@ From the our analytic project, it is good to recap some important findings in th
 
   * Review how we define churn customer
   * Adopt model optimization process 
-  
+
 __Thank you for reading!!!__
