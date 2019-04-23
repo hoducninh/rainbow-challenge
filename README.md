@@ -283,3 +283,7 @@ From the our analytic project, it is good to recap some important findings in th
   * Adopt model optimization process 
 
 __Thank you for reading!!!__
+
+Bests, 
+
+##### hoducninh
